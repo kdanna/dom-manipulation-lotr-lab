@@ -24,6 +24,16 @@ var body = document.querySelector('body');
 
 
 function makeMiddleEarth() {
+  var middle_earth = document.createElement('section');
+  middle_earth.setAttribute('id', 'middle-earth');
+  for (var i = 0; i<lands.length; i++){
+    var land = document.createElement('article');
+    var heading = document.createElement('h1');
+    heading.textContent = lands[i];
+    land.appendChild(heading);
+    middle_earth.appendChild(land);
+  }
+document.body.appendChild(middle_earth);
   // create a section tag with an id of middle-earth
   // inside, add each land as an article tag
   // inside each article tag include an h1 with the name of the land
@@ -31,16 +41,23 @@ function makeMiddleEarth() {
 }
 
 makeMiddleEarth();
-
-
+  
 // Part 2
 
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (which is the first article tag on the page)
-  // give each hobbit a class of hobbit
+var shire = document.querySelector('article');
+var hobbitList = document.createElement("ul");
+hobbitList.setAttribute('class','hobbit');
+  for (var i = 0; i<hobbits.length; i++){
+    var smallThings = document.createElement("li");
+    smallThings.textContent = hobbits[i];
+    hobbitList.appendChild(smallThings);
 }
-
-
+shire.appendChild(hobbitList);
+}
+makeHobbits();
+// display an unordered list of hobbits in the shire (which is the first article tag on the page)
+// give each hobbit a class of hobbit
 // Part 3
 
 function keepItSecretKeepItSafe() {
