@@ -1,6 +1,8 @@
 console.log("Linked.");
 
 // Dramatis Personae
+//Does this work
+
 var hobbits = [
   'Frodo Baggins',
   'Samwise \'Sam\' Gamgee',
@@ -60,31 +62,54 @@ makeHobbits();
 // give each hobbit a class of hobbit
 // Part 3
 
+//var frodo = hobbits[0]; why doesn't this way work?
+var frodo = document.querySelectorAll('li')[0];
 function keepItSecretKeepItSafe() {
+  var ringNoise = document.createElement('div');
+  ringNoise.setAttribute('id', 'the-ring');
+  ringNoise.setAttribute('class', 'magic-imbued-jewelry');
+  ringNoise.addEventListener("click", nazgulScreech);
+  frodo.appendChild(ringNoise);
+}
+keepItSecretKeepItSafe();
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
-  // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked;
   // add the ring as a child of Frodo
-}
 
 
 // Part 4
 
-
+var rivendell = document.querySelectorAll('article')[1];
 function makeBuddies() {
+  var friends = document.createElement('aside');
+  var buddiesList = document.createElement('ul');
+  for (var i = 0; i<buddies.length; i++){
+    var eachBuddy= document.createElement("li");
+     eachBuddy.textContent = buddies[i];
+     buddiesList.appendChild(eachBuddy);
+}
+  friends.appendChild(buddiesList);
+  rivendell.appendChild(friends);
+}
+
+makeBuddies();
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
-}
-
 
 // Part 5
 
 
 function beautifulStranger() {
-  // change the 'Strider' textnode to 'Aragorn'
+  var findStrider = document.querySelectorAll('aside ul li');
+  
+  findStrider[3].textContent = "Aragorn";
+  //var addAragorn = buddies.splice(3,1, "aragorn"
+  //var addAragorn = buddies.splice(3,1, "aragorn")
+   // change the 'Strider' textnode to 'Aragorn'
 }
-
+beautifulStranger();
 
 // Part 6
 
