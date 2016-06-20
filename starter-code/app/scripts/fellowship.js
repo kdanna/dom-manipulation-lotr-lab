@@ -64,7 +64,7 @@ makeHobbits();
 
 //var frodo = hobbits[0]; why doesn't this way work?
 var frodo = document.querySelectorAll('li')[0];
-function keepItSecretKeepItSafe() {
+function keepItSecretKeepItSafe() { 
   var ringNoise = document.createElement('div');
   ringNoise.setAttribute('id', 'the-ring');
   ringNoise.setAttribute('class', 'magic-imbued-jewelry');
